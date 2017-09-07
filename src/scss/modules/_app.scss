@@ -1,3 +1,112 @@
 body{
-	background: #c00000;
+	background: #0099ff;
+	font-family: sans-serif;
+}
+#todoapp{
+	margin: 50px auto 0;
+	width:500px;
+	background: #fff;
+	padding:40px;
+	ul{
+		margin: 0;
+		padding:0;
+		list-style: none;
+		li{
+			display: block;
+			clear: both;
+		}
+	}
+	input[type="text"]{
+		box-shadow: none;
+		border: 2px solid #0099ff;
+		padding: 5px 10px;
+		font-size: 16px;
+		margin-bottom: 20px;
+		&:focus{
+			outline: none;
+			box-shadow: none;
+		}
+	}
+	div{
+		> a{
+			display: inline-block;
+			padding: 5px 15px;
+			text-decoration: none;
+			background: #0099ff;
+			color:#fff;
+			margin-bottom: 20px;
+		}
+	}
+}
+#new-todo{
+	width: 100%;
+}
+#todo-list input.edit {
+  display: none; /* Hides input box*/
+}
+#todo-list .editing label {
+  display: none; /* Hides label text when .editing*/
+}
+#todo-list .editing input.edit {
+  display: inline; /* Shows input text box when .editing*/
+}
+#main{
+	.destroy{
+		display: inline-block;
+		padding: 5px 15px;
+		text-decoration: none;
+		background: #0099ff;
+		color:#fff;
+		margin-bottom: 20px;
+		border:none;
+		float: right;
+		clear: both;
+	}
+	.view{
+		user-select:none;
+		label{
+			font-size: 14px;
+			margin-right: 10px;
+		    clear: both;
+		}
+	}
+}
+
+input[type="checkbox"]{
+	width: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    margin:0 -24px 0 0;
+    opacity:0;
+    visibility: hidden;
+	& + span{
+		user-select:none;
+		display: inline-block;
+		vertical-align: middle;
+		width: 20px;
+	    height: 20px;
+	    border: 2px solid #ccc;
+	    cursor:pointer;	 
+	    position: relative;
+	    transition: all .25s ease-in-out;
+	    &:after{
+	    	position: absolute;
+	    	content: '';
+	    	width:10px;
+	    	height: 10px;
+	    	left:3px;
+	    	top:3px;
+	    	display: inline-block;
+	    	background: transparent;
+	    }
+	}
+	&:checked{
+		& + span{
+			border: 2px solid #0099ff;
+			&:after{
+				background: #0099ff;
+			}
+		}
+	}
 }
